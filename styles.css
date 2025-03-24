@@ -1,43 +1,212 @@
+:root {
+    --blood-red: #8b0000;
+    --dark-gray: #222222;
+    --darker-gray: #1a1a1a;
+    --fog-gray: #c0c0c0;
+    --candle-light: #f8d07a;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    background-image: 
+    url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
+    linear-gradient(to bottom, rgba(69, 27, 27, 0.9), rgba(0, 0, 0, 0.8));
+background-blend-mode: overlay;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    5% { opacity: 0.5; }
+    10% { opacity: 0.6; }
+    15% { opacity: 0.9; }
+    25% { opacity: 0.5; }
+    30% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+    animation: flicker 10s infinite;
+    z-index: -1;
 }
 
 header {
-    background-color: #c25b63;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-bottom: 1px solid var(--blood-red);
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
 }
 
 nav ul {
-    list-style-type: none;
+    display: flex;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
+nav a {
+    color: var(--fog-gray);
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--blood-red);
+    border-bottom: 1px solid var(--blood-red);
 }
 
 main {
-    padding: 20px;
-    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: var(--blood-red);
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px rgba(139, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--blood-red), transparent);
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
 footer {
-    background-color: #c25b63;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid var(--blood-red);
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: var(--fog-gray);
+}
+
+.blood-stain {
     position: fixed;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .image {
+        width: 100%;
+    }
+}
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 3rem 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border: 1px solid var(--blood-red);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+}
+
+.image {
+    width: 300px;
+    height: auto;
+    border: 3px solid var(--blood-red);
+    filter: grayscale(30%) contrast(120%);
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.02);
+}
+
+.text {
+    flex: 1;
+}
+
+.warning {
+    background-color: rgba(139, 0, 0, 0.2);
+    border-left: 4px solid var(--blood-red);
+    padding: 1rem;
+    margin: 2rem 0;
+    font-style: italic;
+}
+.intro-image {
     width: 100%;
-    bottom: 0;
+    height: 400px;
+    object-fit: cover;
+    border: 3px solid var(--blood-red);
+    margin: 2rem 0;
+    filter: sepia(50%) contrast(120%);
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.4);
+}
+
+.quote {
+    font-style: italic;
+    color: var(--candle-light);
+    border-left: 3px solid var(--blood-red);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+.author {
+    display: block;
+    text-align: right;
+    color: var(--fog-gray);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.cta {
+    background-color: rgba(139, 0, 0, 0.3);
+    padding: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+    border: 1px dashed var(--blood-red);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--blood-red);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #6b0000;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.7);
 }
