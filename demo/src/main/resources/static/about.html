@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Квесты - О сайте</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Обо мне</a></li>
+                <li><a href="about.html">О Сайте</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>О Квестах</h1>
+        <p>Это не просто сайт. Это портал в мир забытых кошмаров и нерассказанных ужасов. Здесь создаются квесты, которые не просто развлекают - они меняют.</p>
+        
+        <img src="Novo-Projeto-17.jpg" alt="Тёмный коридор" class="intro-image">
+        <div class="warning">
+            ВНИМАНИЕ: Все описанные здесь события вымышлены... или нет?
+        </div>
+        
+        <p>Все квесты вдохновлены фильмами ужасов и хоррор играми. Мы не просто воссоздаём атмосферу - мы погружаем вас в неё полностью, без возможности вернуться прежним.</p>
+
+        <div class="container">
+            <img src="ShepherdFamilyHouse.webp" alt="Заброшенный дом" class="image">
+            <div class="text">
+                <h2 style="color: var(--candle-light); margin-top: 0;">Что такое страх</h2>
+                <p>Настоящий ужас рождается не от дешёвых пугалок, а от медленного погружения в атмосферу безысходности. Наши квесты - это тщательно спланированные психологические ловушки, где каждая деталь имеет значение.</p>
+                <p>Запертые двери, шёпот из ниоткуда, предметы, которые перемещаются сами по себе... Всё это ждёт вас в наших локациях. Но самое страшное - это то, что вы принесёте с собой.</p>
+                <p>Готовы ли вы узнать, что скрывается в темноте? Или, может быть, что скрывает темнота в вас?</p>
+            </div>
+        </div>
+
+        
+        <div class="form-container">
+            <h1>Оставьте отзыв</h1>
+            <form id="feedbackForm">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Пример: gh@ya.ru">
+    
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+    
+                <button type="submit">Отправить</button>
+            </form>
+            <p id="responseMessage"></p>
+        </div>
+        <script src="script.js"></script>
+
+
+    </main>
+    <footer>
+        <p>&copy;Мы ждали тебя.</p>
+    </footer>
+</body>
+</html>
